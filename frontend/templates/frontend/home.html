@@ -2,15 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Public IP Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .ip {
+            color: #007bff;
+            font-size: 24px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
- {% if ip %}Add commentMore actions
-        <h1>Your Public IP: {{ ip }}</h1>
-    {% elif error %}
-        <h1>Error: {{ error }}</h1>
-    {% else %}
-        <h1>No IP information available.</h1>
-    {% endif %}
+    <div class="container">
+        {% if ip %}
+            <h1>Your Public IP:</h1>
+            <p class="ip">{{ ip }}</p>
+        {% elif error %}
+            <h1 class="error">Error:</h1>
+            <p class="error">{{ error }}</p>
+        {% else %}
+            <h1>No IP information available.</h1>
+        {% endif %}
+    </div>
 </body>
 </html>
