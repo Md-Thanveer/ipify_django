@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-
+ {% if ip %}Add commentMore actions
+        <h1>Your Public IP: {{ ip }}</h1>
+    {% elif error %}
+        <h1>Error: {{ error }}</h1>
+    {% else %}
+        <h1>No IP information available.</h1>
+    {% endif %}
 </body>
 </html>
